@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: orula
+      POSTGRES_USER: nyala
+      POSTGRES_PASSWORD: password
+    volumes:
+      - orula_db:/var/lib/postgresql/data
+
+volumes:
+  orula_db: {}
