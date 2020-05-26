@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lectures",
+  "info": {
+    "name": "lecture"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    },
+    "course": {
+      "via": "lectures",
+      "model": "course"
+    }
+  }
+}

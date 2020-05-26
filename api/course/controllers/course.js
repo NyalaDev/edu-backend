@@ -1,8 +1,54 @@
-'use strict';
+const { sanitizeEntity } = require('strapi-utils');
+const slugify = require('slugify');
 
-/**
- * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
- * to customize this controller
- */
+module.exports = {
+  async create(ctx) {
+    const {
+      state: { user },
+      request: { body },
+    } = ctx;
+    const course = { ...body, user: user.id };
+    let entity;
 
-module.exports = {};
+    const slug = slugify(course.title, { lower: true });
+    entity = await strapi.services.course.findOne({ slug: slug });
+    if (entity) {
+      return ctx.response.badRequest(`Course slug must be unique ${slug}`);
+    }
+
+    entity = await strapi.services.course.create(course);
+    return sanitizeEntity(entity, { model: strapi.models.course });
+  },
+  async update(ctx) {
+    const { id } = ctx.params;
+
+    let entity;
+
+    const [course] = await strapi.services.course.find({
+      id: ctx.params.id,
+      'user.id': ctx.state.user.id,
+    });
+
+    if (!course) {
+      return ctx.unauthorized(`You can't update this entry`);
+    }
+
+    entity = await strapi.services.course.update({ id }, ctx.request.body);
+
+    return sanitizeEntity(entity, { model: strapi.models.course });
+  },
+  async delete(ctx) {
+    const { id } = ctx.params;
+    const [course] = await strapi.services.course.find({
+      id: ctx.params.id,
+      'user.id': ctx.state.user.id,
+    });
+
+    if (!course) {
+      return ctx.unauthorized(`You can't delete this entry`);
+    }
+
+    const entity = await strapi.services.course.delete({ id });
+    return sanitizeEntity(entity, { model: strapi.models.course });
+  },
+};

@@ -18,7 +18,7 @@
     },
     "slug": {
       "type": "string",
-      "required": true,
+      "required": false,
       "unique": true
     },
     "github_repo": {
@@ -26,6 +26,15 @@
     },
     "language": {
       "model": "language"
+    },
+    "lectures": {
+      "collection": "lecture",
+      "via": "course"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "courses"
     }
   }
 }
