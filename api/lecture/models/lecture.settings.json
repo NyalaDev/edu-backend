@@ -23,6 +23,9 @@
     "description": {
       "type": "text"
     },
+    "duration": {
+      "type": "string"
+    },
     "course": {
       "via": "lectures",
       "model": "course"

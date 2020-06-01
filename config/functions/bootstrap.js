@@ -1,4 +1,11 @@
-"use strict";
+'use strict';
+const AWS = require('aws-sdk');
+const Settings = require('../../api/helpers/settings');
+
+// @Mozafar, set AWES_REGION env
+const region = process.env.AWS_REGION || 'ap-southeast-2';
+AWS.config.update({ region });
+const ssm = new AWS.SSM();
 
 /**
  * An asynchronous bootstrap function that runs before
@@ -11,11 +18,24 @@
  */
 
 module.exports = async () => {
+  try {
+    // Load param from AWS
+    const options = {
+      Name: '/Orula/YoutubeApiKey',
+      WithDecryption: true,
+    };
+    const { Parameter } = await ssm.getParameter(options).promise();
+    const settings = new Settings();
+    settings.set('youtubeApiKey', Parameter.Value);
+  } catch (e) {
+    console.log('Error');
+  }
+
   // Seed the languages tables if no language exists
   try {
-    const count = await strapi.query("language").count({});
+    const count = await strapi.query('language').count({});
     if (count === 0) {
-      const seed = require("../../data/seed/languages.json");
+      const seed = require('../../data/seed/languages.json');
       seed.forEach((language) => {
         strapi.services.language.create({
           name: language.name,

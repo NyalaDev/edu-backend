@@ -53,8 +53,12 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "courses": {
-      "via": "user",
+    "teaches": {
+      "via": "instructor",
+      "collection": "course"
+    },
+    "enrollments": {
+      "via": "students",
       "collection": "course"
     }
   }

@@ -24,17 +24,30 @@
     "github_repo": {
       "type": "string"
     },
+    "price": {
+      "type": "decimal",
+      "default": 0
+    },
+    "thumbnail": {
+      "type": "string"
+    },
     "language": {
       "model": "language"
+    },
+    "instructor": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "teaches"
     },
     "lectures": {
       "collection": "lecture",
       "via": "course"
     },
-    "user": {
+    "students": {
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "courses"
+      "collection": "user",
+      "via": "enrollments",
+      "dominant": true
     }
   }
 }

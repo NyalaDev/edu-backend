@@ -11,6 +11,8 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "aws-sdk": "^2.686.0",
+    "axios": "^0.19.2",
     "knex": "0.21.1",
     "pg": "latest",
     "slugify": "^1.4.0",
