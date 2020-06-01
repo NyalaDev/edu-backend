@@ -1,9 +1,9 @@
 'use strict';
 const AWS = require('aws-sdk');
+const { languageSeeder, courseSeeder } = require('./seeder');
 const Settings = require('../../api/helpers/settings');
 
-// @Mozafar, set AWES_REGION env
-const region = process.env.AWS_REGION || 'ap-southeast-2';
+const region = process.env.AWS_REGION || 'eu-central-1';
 AWS.config.update({ region });
 const ssm = new AWS.SSM();
 
@@ -21,7 +21,7 @@ module.exports = async () => {
   try {
     // Load param from AWS
     const options = {
-      Name: '/Orula/YoutubeApiKey',
+      Name: '/Orula/dev/YoutubeApiKey',
       WithDecryption: true,
     };
     const { Parameter } = await ssm.getParameter(options).promise();
@@ -32,18 +32,8 @@ module.exports = async () => {
   }
 
   // Seed the languages tables if no language exists
-  try {
-    const count = await strapi.query('language').count({});
-    if (count === 0) {
-      const seed = require('../../data/seed/languages.json');
-      seed.forEach((language) => {
-        strapi.services.language.create({
-          name: language.name,
-          iso2: language.iso2,
-        });
-      });
-    }
-  } catch (e) {
-    console.error(e);
-  }
+  languageSeeder();
+
+  // Seed the courses and lectures table
+  courseSeeder();
 };
