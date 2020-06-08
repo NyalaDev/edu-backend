@@ -28,7 +28,7 @@ module.exports = async () => {
     const settings = new Settings();
     settings.set('youtubeApiKey', Parameter.Value);
   } catch (e) {
-    console.log('Error');
+    console.log('Unable to load Youtube API key from SSM');
   }
 
   // Seed the languages tables if no language exists
@@ -36,4 +36,12 @@ module.exports = async () => {
 
   // Seed the courses and lectures table
   courseSeeder();
+
+  // User seeder ?
+  // try {
+  //   const users = await strapi.plugins['users-permissions'].services.user.fetchAll();
+  //   console.log(users);
+  // } catch (e) {
+  //   console.error('Failed badly');
+  // }
 };

@@ -1,5 +1,5 @@
 const { sanitizeEntity } = require('strapi-utils');
-const slugify = require('slugify');
+const { slugify } = require('../../helpers/util');
 
 module.exports = {
   async create(ctx) {
@@ -7,10 +7,10 @@ module.exports = {
       state: { user },
       request: { body },
     } = ctx;
-    const course = { ...body, user: user.id };
+    const course = { ...body, instructor: user.id };
     let entity;
 
-    const slug = slugify(course.title, { lower: true });
+    const slug = slugify(course.title);
     entity = await strapi.services.course.findOne({ slug: slug });
     if (entity) {
       return ctx.response.badRequest(`Course slug must be unique ${slug}`);
@@ -26,7 +26,7 @@ module.exports = {
 
     const [course] = await strapi.services.course.find({
       id: ctx.params.id,
-      'user.id': ctx.state.user.id,
+      'instructor.id': ctx.state.user.id,
     });
 
     if (!course) {
@@ -41,7 +41,7 @@ module.exports = {
     const { id } = ctx.params;
     const [course] = await strapi.services.course.find({
       id: ctx.params.id,
-      'user.id': ctx.state.user.id,
+      'instructor.id': ctx.state.user.id,
     });
 
     if (!course) {

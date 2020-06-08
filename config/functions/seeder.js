@@ -1,3 +1,4 @@
+const { slugify } = require('../../api/helpers/util');
 const languageSeeder = async () => {
   try {
     const count = await strapi.query('language').count({});
