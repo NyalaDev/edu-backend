@@ -1,0 +1,34 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+before_script:
+  - apk update
+  - apk add --update --no-cache curl jq py3-configobj py3-pip py3-setuptools python3 python3-dev
+  - pip install awscli
+
+variables:
+  AWS_DEFAULT_REGION: eu-central-1
+  AWS_ECR_REPO: 394363841155.dkr.ecr.eu-central-1.amazonaws.com/nyala-edu
+
+stages:
+  - build
+  - deploy
+
+build docker image:
+  stage: build
+  script:
+    - pip install awscli
+    - aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin $AWS_ECR_REPO
+    - docker build -t nyala-edu .
+    - docker tag nyala-edu:latest $AWS_ECR_REPO:latest
+    - docker push $AWS_ECR_REPO:latest
+
+deploy staging:
+  stage: deploy
+  script:
+    - sh ./ecs-deploy.sh dev
+#   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+#   script:
+#  - aws ecs register-task-definition --family ssc-dev-fargate --requires-compatibilities FARGATE --cpu 256 --memory 512 --cli-input-json file://aws/webcaptioner-task-definition-$CI_ENVIRONMENT_SLUG.json
