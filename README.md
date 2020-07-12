@@ -22,8 +22,28 @@ docker-compose -f docker-compose-dev.yml up
 yarn
 ```
 
+- Create `.env` file in root of the project
+
+```
+touch .env
+```
+
+- Add the following configuation
+
+```
+# ALGOLIA Configuration
+ALGOLIA_APP_ID=ENTER_ALGOLIA_APP_ID_HERE
+ALGOLIA_SECRET=ENTER_ALGOLIA_SECRET_HERE
+```
+
 - Start the dev server
 
 ```
+
 yarn develop
+
+```
+
+```
+
 ```
