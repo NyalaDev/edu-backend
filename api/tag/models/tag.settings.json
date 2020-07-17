@@ -17,7 +17,7 @@
       "via": "tags",
       "dominant": true
     },
-    "tadSlag": {
+    "tagSlug": {
       "type": "string"
     }
   }
