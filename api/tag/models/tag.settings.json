@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "name": "Tag"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "tagName": {
+      "type": "string"
+    },
+    "courses": {
+      "collection": "course",
+      "via": "tags",
+      "dominant": true
+    },
+    "tadSlag": {
+      "type": "string"
+    }
+  }
+}
