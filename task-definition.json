@@ -1,0 +1,75 @@
+{
+  "family": "edu-dev-td",
+  "memory": "512",
+  "cpu": "256",
+  "executionRoleArn": "arn:aws:iam::394363841155:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "environment": [
+        {
+          "name": "PROXY_HOST",
+          "value": "edu-api.nyaladev.com"
+        },
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        }
+      ],
+      "name": "nyala-edu",
+      "secrets": [
+        {
+          "valueFrom": "/dev/edu/dbHost",
+          "name": "DATABASE_HOST"
+        },
+        {
+          "valueFrom": "/dev/edu/dbName",
+          "name": "DATABASE_NAME"
+        },
+        {
+          "valueFrom": "/dev/edu/dbPass",
+          "name": "DATABASE_PASSWORD"
+        },
+        {
+          "valueFrom": "/dev/edu/dbPort",
+          "name": "DATABASE_PORT"
+        },
+        {
+          "valueFrom": "/dev/edu/dbUser",
+          "name": "DATABASE_USERNAME"
+        },
+        {
+          "valueFrom": "/dev/edu/algoliaAppId",
+          "name": "ALGOLIA_APP_ID"
+        },
+        {
+          "valueFrom": "/dev/edu/algoliaApiKey",
+          "name": "ALGOLIA_SECRET"
+        },
+        {
+          "valueFrom": "/dev/edu/YoutubeApiKey",
+          "name": "YOUTUBE_API_KEY"
+        }
+      ],
+      "image": "394363841155.dkr.ecr.eu-central-1.amazonaws.com/nyala-edu:latest",
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": 1437,
+          "hostPort": 1437
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-region": "eu-central-1",
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-group": "/ecs/edu-dev-td"
+        }
+      },
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "taskRoleArn": "arn:aws:iam::394363841155:role/ecsTaskExecutionRole"
+}

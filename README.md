@@ -1,5 +1,7 @@
 # Nyala Edu backend (Orula)
 
+<img src="https://s3.abolkog.com/coderhub/logo.png" title="coderhub" alt="coderhub">
+
 Edu and Training website back-end. Built with Strapi
 
 ## Starting the database setup
@@ -41,9 +43,5 @@ ALGOLIA_SECRET=ENTER_ALGOLIA_SECRET_HERE
 ```
 
 yarn develop
-
-```
-
-```
 
 ```

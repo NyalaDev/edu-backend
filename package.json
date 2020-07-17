@@ -2,7 +2,7 @@
   "name": "edu-backend",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Nyala edu platform back-end",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -27,7 +27,7 @@
     "strapi-utils": "3.0.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "NyalaDev"
   },
   "strapi": {
     "uuid": "bb3598d4-69d3-4bc9-a340-db30d747dbe4"
@@ -36,5 +36,13 @@
     "node": ">=10.0.0",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NyalaDev/edu-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NyalaDev/edu-backend/issues"
+  },
+  "homepage": "https://github.com/NyalaDev/edu-backend"
 }
