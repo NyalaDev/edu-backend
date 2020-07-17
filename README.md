@@ -43,7 +43,3 @@ ALGOLIA_SECRET=ENTER_ALGOLIA_SECRET_HERE
 yarn develop
 
 ```
-
-```
-
-```
