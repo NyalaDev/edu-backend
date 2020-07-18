@@ -48,6 +48,10 @@
       "collection": "user",
       "via": "enrollments",
       "dominant": true
+    },
+    "tags": {
+      "via": "courses",
+      "collection": "tag"
     }
   }
 }

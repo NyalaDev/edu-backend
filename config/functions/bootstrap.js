@@ -19,6 +19,7 @@ const ssm = new AWS.SSM();
 
 module.exports = async () => {
   try {
+    // FIXME: Update this settings
     // Load param from AWS
     const options = {
       Name: '/Orula/dev/YoutubeApiKey',
