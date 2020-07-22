@@ -13,6 +13,8 @@ const client = algoliasearch(settings.appId, settings.apiKey);
 
 const getIndex = (indexName) => client.initIndex(indexName);
 
+const isIndexingEnabled = process.env.ENABLE_INDEXING === 'yes';
+
 module.exports = {
   /**
    * Save a new object to the index
@@ -21,6 +23,8 @@ module.exports = {
    * @param {*} index The index name
    */
   async save(model, index) {
+    if (!isIndexingEnabled) return;
+
     if (!index) {
       strapi.log.error(`Index name is missing`);
     }
@@ -41,6 +45,8 @@ module.exports = {
    * @param {*} index The index name
    */
   async delete(objectID, index) {
+    if (!isIndexingEnabled) return;
+
     if (!objectID) {
       strapi.log.error(`Missing object id`);
     }
