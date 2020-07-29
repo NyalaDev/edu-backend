@@ -15,5 +15,6 @@ module.exports = ({ env }) => {
     admin: {
       autoOpen: false,
     },
+    url: env('APP_URL', 'http://localhost:1437'),
   };
 };
