@@ -15,6 +15,6 @@ module.exports = ({ env }) => {
     admin: {
       autoOpen: false,
     },
-    url: env('APP_URL', 'http://localhost:1437'),
+    url: env('APP_URL', 'https://edu-api.nyaladev.com'),
   };
 };
