@@ -38,6 +38,9 @@ touch .env
 - Add the following configuation
 
 ```
+# for social login. Replace the port with your configured port number
+APP_URL=http://localhost:1437
+
 # ALGOLIA Configuration
 ALGOLIA_APP_ID=ENTER_ALGOLIA_APP_ID_HERE
 ALGOLIA_SECRET=ENTER_ALGOLIA_SECRET_HERE
