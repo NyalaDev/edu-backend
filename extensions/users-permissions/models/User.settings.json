@@ -60,6 +60,10 @@
     "enrollments": {
       "via": "students",
       "collection": "course"
+    },
+    "profile": {
+      "via": "user",
+      "model": "profile"
     }
   }
 }
