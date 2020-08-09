@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/profiles/:id",
+      "path": "/profiles",
       "handler": "profile.update",
       "config": {
         "policies": []
