@@ -38,8 +38,7 @@ module.exports = {
         contentDetails: { duration },
       } = items[0];
 
-      // FIXME: Improve this formatting function
-      return duration.replace('PT', '').replace('H', ':').replace('M', ':').replace('S', '');
+      return duration;
     } catch (e) {
       return null;
     }
