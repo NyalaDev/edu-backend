@@ -2,6 +2,17 @@ const { sanitizeEntity } = require('strapi-utils');
 const { slugify } = require('../../helpers/util');
 
 module.exports = {
+  async find(ctx) {
+    return strapi
+      .query('course')
+      .find(ctx.query, ['lectures', 'tags', 'instructor', 'instructor.profile']);
+  },
+  async findOne(ctx) {
+    const { id } = ctx.params;
+    return strapi
+      .query('course')
+      .findOne({ id }, ['lectures', 'tags', 'instructor', 'instructor.profile']);
+  },
   async create(ctx) {
     const {
       state: { user },
