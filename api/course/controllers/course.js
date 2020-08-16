@@ -3,15 +3,19 @@ const { slugify } = require('../../helpers/util');
 
 module.exports = {
   async find(ctx) {
-    return strapi
+    const courses = await strapi
       .query('course')
       .find(ctx.query, ['lectures', 'tags', 'instructor', 'instructor.profile']);
+
+    return courses.map((course) => sanitizeEntity(course, { model: strapi.models.course }));
   },
   async findOne(ctx) {
     const { id } = ctx.params;
-    return strapi
+    const course = await strapi
       .query('course')
       .findOne({ id }, ['lectures', 'tags', 'instructor', 'instructor.profile']);
+
+    return sanitizeEntity(course, { model: strapi.models.course });
   },
   async create(ctx) {
     const {
