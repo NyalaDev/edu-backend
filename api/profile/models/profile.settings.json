@@ -36,6 +36,9 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "name": {
+      "type": "string"
     }
   }
 }
