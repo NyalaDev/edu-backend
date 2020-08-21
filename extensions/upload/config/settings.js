@@ -5,7 +5,7 @@ module.exports = {
     secretAccessKey: process.env.AWS_ACCESS_KEY_SECRET,
     region: process.env.AWS_REGION || 'eu-central-1',
     params: {
-      Bucket: 'edu-profile-pictures',
+      Bucket: `${process.env.S3_BUCKET}/coderhub`,
     },
   },
 };
