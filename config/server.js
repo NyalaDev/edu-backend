@@ -16,6 +16,6 @@ module.exports = ({ env }) => {
     admin: {
       autoOpen: false,
     },
-    url,
+    // url,
   };
 };

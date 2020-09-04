@@ -17,7 +17,7 @@ module.exports = ({ env }) => {
           debug: env('debug'),
           pool: {
             min: 0,
-            max: env('DB_POOL', 60),
+            max: env.int('DB_POOL_MAX', 60),
             createTimeoutMillis: 60000,
             acquireTimeoutMillis: 60000,
             idleTimeoutMillis: 60000,
