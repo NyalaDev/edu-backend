@@ -2,7 +2,7 @@
 const { slugify } = require('../../helpers/util');
 
 const isProd = process.env.ALGOLIA_MODE === 'prod';
-const algoliaIndexName = isProd ? 'lecture' : 'dev_lecture';
+const algoliaIndexName = isProd ? 'course' : 'dev_course';
 
 /**
  * Lifecycle callbacks for the `course` model.
