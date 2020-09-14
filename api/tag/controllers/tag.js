@@ -1,8 +1,16 @@
 'use strict';
+const { sanitizeEntity } = require('strapi-utils');
 
-/**
- * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
- * to customize this controller
- */
+module.exports = {
+  async find(ctx) {
+    const tags = await strapi.query('tag').find(ctx.query, ['courses', 'courses.lectures']);
 
-module.exports = {};
+    return tags.map((tag) => sanitizeEntity(tag, { model: strapi.models.tag }));
+  },
+  async findOne(ctx) {
+    const { id } = ctx.params;
+    const tag = await strapi.query('tag').findOne({ id }, ['courses', 'courses.lectures']);
+
+    return sanitizeEntity(tag, { model: strapi.models.tag });
+  },
+};
