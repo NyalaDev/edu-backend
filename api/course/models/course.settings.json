@@ -50,8 +50,16 @@
       "dominant": true
     },
     "tags": {
-      "via": "courses",
-      "collection": "tag"
+      "collection": "tag",
+      "via": "courses"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Draft",
+        "Published"
+      ],
+      "default": "Draft"
     }
   }
 }
