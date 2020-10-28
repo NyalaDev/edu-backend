@@ -13,8 +13,8 @@
       "type": "string"
     },
     "courses": {
-      "collection": "course",
       "via": "tags",
+      "collection": "course",
       "dominant": true
     },
     "tagSlug": {

@@ -3,11 +3,6 @@ const { sanitizeEntity } = require('strapi-utils');
 
 const { isValidYoutubeUrl, getVideoId, getVideoDuration } = require('../../helpers/youtube');
 
-/**
- * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
- * to customize this controller
- */
-
 module.exports = {
   async create(ctx) {
     const {
@@ -15,7 +10,11 @@ module.exports = {
       request: { body },
     } = ctx;
 
-    const course = await strapi.services.course.findOne({ id: body.course });
+    const course = await strapi.services.course.findOne({
+      id: body.course,
+      'instructor.id': user.id,
+    });
+
     if (!course) {
       return ctx.response.notFound('Invalid course');
     }
@@ -35,6 +34,22 @@ module.exports = {
     const lecture = { ...body, duration, position };
 
     const entity = await strapi.services.lecture.create(lecture);
+    return sanitizeEntity(entity, { model: strapi.models.lecture });
+  },
+  async delete(ctx) {
+    const { id } = ctx.params;
+    const lecture = await strapi.services.lecture.findOne({ id });
+
+    const course = await strapi.services.course.find({
+      id: lecture.course.id,
+      'instructor.id': ctx.state.user.id,
+    });
+
+    if (!course) {
+      return ctx.unauthorized(`You can't delete this entry`);
+    }
+
+    const entity = await strapi.services.lecture.delete({ id });
     return sanitizeEntity(entity, { model: strapi.models.lecture });
   },
 };
