@@ -30,6 +30,7 @@ const initPermissions = async () => {
     await enablePermission('public', 'lecture', action);
     await enablePermission('public', 'language', action);
     await enablePermission('public', 'profile', action);
+    await enablePermission('public', 'tag', action);
 
     // Authentication
     await enablePermission('authenticated', 'course', action);
