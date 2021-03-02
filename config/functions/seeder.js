@@ -26,7 +26,7 @@ const courseSeeder = async () => {
 
       for (const rawCourse of courses) {
         rawCourse.language = 6;
-        rawCourse.instructor = 1; // FIXME: @mozafar, make sure to create an admin with id 1 till we fix this code to load user
+        rawCourse.instructor = 1;
         let createdCourse = await strapi.services.course.create(rawCourse);
         const courseLectures = lectures.filter((l) => l.course_id === rawCourse.id);
         for (const lecture of courseLectures) {
@@ -37,8 +37,31 @@ const courseSeeder = async () => {
       }
     }
   } catch (e) {
-    console.error(e);
+    strapi.log.error(e);
   }
 };
 
-module.exports = { languageSeeder, courseSeeder };
+const createRoleIfNotExists = async (name, type) => {
+  const roleEntity = await strapi.query('role', 'users-permissions').findOne({ type });
+  if(!roleEntity) {
+    await strapi.query('role', 'users-permissions').create({ name, type });
+    strapi.log.debug(`created role ${name}`);
+  }
+}
+
+const roleSeeder = async () => {
+  try {
+    await createRoleIfNotExists('Teacher', 'teacher');
+
+    const users = await strapi.query('user', 'users-permissions').find();
+    if(users && users.length === 0) {
+      await strapi.query('user', 'users-permissions').create({ username: 'test', email: 'test@test.com' });
+      strapi.log.debug('created first user in DB');
+    }
+
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+module.exports = { languageSeeder, courseSeeder, roleSeeder };
