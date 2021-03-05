@@ -60,6 +60,10 @@
         "Published"
       ],
       "default": "Draft"
+    },
+    "resourses": {
+      "type": "json",
+      "required": false
     }
   }
 }
