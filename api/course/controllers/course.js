@@ -108,7 +108,6 @@ module.exports = {
       state: { user },
       request: { body },
     } = ctx;
-    const { status = 'Draft' } = body;
 
     const course = await strapi.services.course.findOne({
       id,
@@ -119,23 +118,24 @@ module.exports = {
       return ctx.unauthorized(`You can't update this entry`);
     }
 
-    if (course.lectures.length === 0 && status === 'Published') {
+    if (course.lectures.length === 0 && body.status && body.status === 'Published') {
       return ctx.unauthorized(`You cannot publish a course with no lectures`);
     }
 
     const patch = {};
     if (body.status) {
-      patch.status = status;
+      const { status = 'Draft' } = body;
+      patch.status = status.toLowerCase() === 'published' ? 'Published' : 'Draft';
     }
 
     if (body.tags) {
-      console.log('wala');
       patch.tags = body.tags;
     }
+    if (body.resources) {
+      patch.resources = body.resources;
+    }
 
-    const sanatizedStatus = status.toLowerCase() === 'published' ? 'Published' : 'Draft';
-
-    const entity = await strapi.services.course.update({ id }, { status: sanatizedStatus });
+    const entity = await strapi.services.course.update({ id }, { ...patch });
 
     return sanitizeEntity(entity, { model: strapi.models.course });
   },
