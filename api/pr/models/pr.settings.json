@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prs",
+  "info": {
+    "name": "pr"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "course": {
+      "model": "course"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "reviewedBy": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "exercise": {
+      "type": "string"
+    }
+  }
+}
