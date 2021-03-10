@@ -55,7 +55,10 @@
     },
     "status": {
       "type": "enumeration",
-      "enum": ["Draft", "Published"],
+      "enum": [
+        "Draft",
+        "Published"
+      ],
       "default": "Draft"
     },
     "resources": {

@@ -56,6 +56,7 @@ const initPermissions = async () => {
 
   await enablePermission('authenticated', 'profile', 'create');
   await enablePermission('authenticated', 'profile', 'update');
+    await enablePermission('authenticated', 'pr', 'create');
 };
 
 module.exports = {
