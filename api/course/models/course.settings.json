@@ -55,12 +55,23 @@
     },
     "status": {
       "type": "enumeration",
-      "enum": ["Draft", "Published"],
+      "enum": [
+        "Draft",
+        "Published"
+      ],
       "default": "Draft"
     },
     "resources": {
       "type": "json",
       "required": false
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Advanced"
+      ]
     }
   }
 }

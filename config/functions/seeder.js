@@ -22,7 +22,7 @@ const tagSeeder = async () => {
       await strapi.services.tag.create(tag);
     }
   }
-}
+};
 
 const courseSeeder = async () => {
   if (process.env.NODE_ENV === 'production') return;
@@ -35,7 +35,8 @@ const courseSeeder = async () => {
     for (const rawCourse of courses) {
       rawCourse.language = 6;
       rawCourse.instructor = 1;
-      rawCourse.tags = [1]
+      rawCourse.tags = [1];
+      rawCourse.level = 'intermediate';
       let createdCourse = await strapi.services.course.create(rawCourse);
       const courseLectures = lectures.filter((l) => l.course_id === rawCourse.id);
       for (const lecture of courseLectures) {
@@ -49,11 +50,11 @@ const courseSeeder = async () => {
 
 const createRoleIfNotExists = async (name, type) => {
   const roleEntity = await strapi.query('role', 'users-permissions').findOne({ type });
-  if(!roleEntity) {
+  if (!roleEntity) {
     await strapi.query('role', 'users-permissions').create({ name, type });
     strapi.log.debug(`created role ${name}`);
   }
-}
+};
 
 const roleSeeder = async () => {
   await createRoleIfNotExists('Teacher', 'teacher');
@@ -61,11 +62,20 @@ const roleSeeder = async () => {
   const profiles = await strapi.query('profile').find();
   const users = await strapi.query('user', 'users-permissions').find();
 
-  if(profiles && profiles.length === 0 && users && users.length === 0) {
-    const {id: profileId} = await strapi.query('profile').create({ name: 'test', bio: 'test bio', linkedin: 'https://linkedin.com', github: 'https://github.com/test' });
-    await strapi.query('user', 'users-permissions').create({ username: 'test', email: 'test@test.com', profile: profileId });
+  if (profiles && profiles.length === 0 && users && users.length === 0) {
+    const { id: profileId } = await strapi
+      .query('profile')
+      .create({
+        name: 'test',
+        bio: 'test bio',
+        linkedin: 'https://linkedin.com',
+        github: 'https://github.com/test',
+      });
+    await strapi
+      .query('user', 'users-permissions')
+      .create({ username: 'test', email: 'test@test.com', profile: profileId });
     strapi.log.debug('created first user in DB');
   }
-}
+};
 
 module.exports = { languageSeeder, courseSeeder, roleSeeder, tagSeeder };
