@@ -64,6 +64,14 @@
     "resources": {
       "type": "json",
       "required": false
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Advanced"
+      ]
     }
   }
 }
