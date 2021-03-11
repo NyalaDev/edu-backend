@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/lectures/import",
+      "handler": "lecture.import",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
