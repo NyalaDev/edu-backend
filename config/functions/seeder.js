@@ -36,7 +36,7 @@ const courseSeeder = async () => {
       rawCourse.language = 6;
       rawCourse.instructor = 1;
       rawCourse.tags = [1];
-      rawCourse.level = 'intermediate';
+      rawCourse.level = 'Intermediate';
       let createdCourse = await strapi.services.course.create(rawCourse);
       const courseLectures = lectures.filter((l) => l.course_id === rawCourse.id);
       for (const lecture of courseLectures) {
@@ -63,14 +63,12 @@ const roleSeeder = async () => {
   const users = await strapi.query('user', 'users-permissions').find();
 
   if (profiles && profiles.length === 0 && users && users.length === 0) {
-    const { id: profileId } = await strapi
-      .query('profile')
-      .create({
-        name: 'test',
-        bio: 'test bio',
-        linkedin: 'https://linkedin.com',
-        github: 'https://github.com/test',
-      });
+    const { id: profileId } = await strapi.query('profile').create({
+      name: 'test',
+      bio: 'test bio',
+      linkedin: 'https://linkedin.com',
+      github: 'https://github.com/test',
+    });
     await strapi
       .query('user', 'users-permissions')
       .create({ username: 'test', email: 'test@test.com', profile: profileId });
