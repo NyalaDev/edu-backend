@@ -1,0 +1,480 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "ANVLSupelams41uYu1pXALUTVVU",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Dsd4KIwubOybXEm5tyL-J4xS8TI",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS5GNjNDRDREMDQxOThCMDQ2",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 1  Intro + Setup",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/J3UynuivVy4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/J3UynuivVy4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/J3UynuivVy4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/J3UynuivVy4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/J3UynuivVy4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "J3UynuivVy4"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "TnInK2Vbx5GyiCHSGzQcXQtPa24",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS4wOTA3OTZBNzVEMTUzOTMy",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 2  Get Started",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bVb6DIGg8oo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bVb6DIGg8oo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bVb6DIGg8oo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/bVb6DIGg8oo/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/bVb6DIGg8oo/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 1,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "bVb6DIGg8oo"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "VVVVq_JzeuPKFImTB4W6CMRF2Dg",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS45NDk1REZENzhEMzU5MDQz",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 3  Components",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/cP-s-jvv6P4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/cP-s-jvv6P4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/cP-s-jvv6P4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/cP-s-jvv6P4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/cP-s-jvv6P4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 2,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "cP-s-jvv6P4"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "-0TQBzwJWOBd9QUeOMEXqTtBeYM",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS41MjE1MkI0OTQ2QzJGNzNG",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 4  Props in Typescript",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2tRlsDDfPtA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2tRlsDDfPtA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2tRlsDDfPtA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/2tRlsDDfPtA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/2tRlsDDfPtA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 3,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "2tRlsDDfPtA"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "d4rqSFHCAWQb-vCejI8STbkB5L4",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS4wMTcyMDhGQUE4NTIzM0Y5",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 5  Intro to TypeScript",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IqPQUzxYgHA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IqPQUzxYgHA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IqPQUzxYgHA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/IqPQUzxYgHA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/IqPQUzxYgHA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 4,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "IqPQUzxYgHA"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "U56Rto0qhYmWPPlL5iv7cBEDbQE",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS4yODlGNEE0NkRGMEEzMEQy",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 6  State & Forms",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OQ5uonLg-2s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OQ5uonLg-2s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OQ5uonLg-2s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/OQ5uonLg-2s/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/OQ5uonLg-2s/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 5,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "OQ5uonLg-2s"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "IZ9TLiIqhZxYLbOxZJtrVixGzJ8",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS5DQUNERDQ2NkIzRUQxNTY1",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 7  Lift State up",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/LfeTiC5Duoc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/LfeTiC5Duoc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/LfeTiC5Duoc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/LfeTiC5Duoc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/LfeTiC5Duoc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 6,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "LfeTiC5Duoc"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "CedzN0piKoANmQbSeMQbgCTNgmM",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS41MzJCQjBCNDIyRkJDN0VD",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 8  Lists",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GBFLpTBZNt8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GBFLpTBZNt8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GBFLpTBZNt8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/GBFLpTBZNt8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/GBFLpTBZNt8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 7,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "GBFLpTBZNt8"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Q2AT2703Mk60uNsBUJ5cHN2GDP0",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS41NkI0NEY2RDEwNTU3Q0M2",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 9  Styling",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ntFTsYnSJFo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ntFTsYnSJFo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ntFTsYnSJFo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/ntFTsYnSJFo/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/ntFTsYnSJFo/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 8,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "ntFTsYnSJFo"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "yo4kCooTzMlSHheL_J0_TXGS24w",
+      "id": "UExrTGd1YkFEOHRYNjB5eVYycE11ckJDdS1iMFVIWVlsLS4xMkVGQjNCMUM1N0RFNEUx",
+      "snippet": {
+        "publishedAt": "2021-03-01T17:24:49Z",
+        "channelId": "UCO002nIY-EW5YD44xWIH4Gw",
+        "title": "Arabic / React with TypeScript / 10  Conditional Rendering",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/NnL-B8s_gMo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/NnL-B8s_gMo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/NnL-B8s_gMo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/NnL-B8s_gMo/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/NnL-B8s_gMo/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Barmaga",
+        "playlistId": "PLkLgubAD8tX60yyV2pMurBCu-b0UHYYl-",
+        "position": 9,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "NnL-B8s_gMo"
+        },
+        "videoOwnerChannelTitle": "Barmaga",
+        "videoOwnerChannelId": "UCO002nIY-EW5YD44xWIH4Gw"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 10,
+    "resultsPerPage": 50
+  }
+}
