@@ -17,10 +17,12 @@ module.exports = {
     async afterCreate(result) {
       const course = { ...result };
       const { instructor } = course;
-      delete instructor.password;
-      delete course.students;
+      if(instructor) {
+        delete instructor.password;
+        delete course.students;
+        course.instructor = instructor;
+      }
       // delete course.lectures;
-      course.instructor = instructor;
 
       // Save to index
       try {
@@ -32,10 +34,12 @@ module.exports = {
     async afterUpdate(result) {
       const course = { ...result };
       const { instructor } = course;
-      delete instructor.password;
-      delete course.students;
-      // delete course.lectures;
-      course.instructor = instructor;
+      if(instructor) {
+        delete instructor.password;
+        delete course.students;
+        // delete course.lectures;
+        course.instructor = instructor;
+      }
 
       // Save to index
       try {

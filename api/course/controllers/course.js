@@ -14,7 +14,7 @@ module.exports = {
   async find(ctx) {
     const courses = await strapi
       .query('course')
-      .find({ status: 'Published', ...ctx.query }, [
+      .find({ status_in: ['Published', 'Upcoming'], ...ctx.query }, [
         'language',
         'lectures',
         'tags',
