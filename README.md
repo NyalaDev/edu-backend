@@ -1,20 +1,21 @@
-# Nyala Edu backend (Orula)
+# Barmaga.IO Backend API
 
-Edu and Training website back-end. Built with Strapi
+Barmaga.io, an open source education/learning platform.
+This is the back-end side of the project.
+If you are looking for the back-end api please go tot this project [edu-ui](https://github.com/NyalaDev/edu-ui)
 
 ## Requirements
 
 - NodeJS
 - PostgresSQL (Recommended to use docker)
-- Algolia Account
 - Youtube API Key
+- Algolia Account (If you want to enable search and indexing)
 
 ## Starting the database setup
 
-This project uses PostgreSQL database, recommended way is to use docker to setup the database.
+This project uses PostgreSQL database, the recommended way is to use docker to setup the database. There is a docker compose file included with the project for the database.
 
-> If you are not using docker, then figure out how to create the database yourself
-
+- Make sure you have Docker installed
 - Run the command in the project root
 
 ```
