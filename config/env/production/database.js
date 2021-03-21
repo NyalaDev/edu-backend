@@ -1,3 +1,6 @@
+const parse = require('pg-connection-string').parse;
+const config = parse(process.env.DATABASE_URL);
+
 module.exports = ({ env }) => {
   return {
     defaultConnection: 'default',
@@ -6,12 +9,11 @@ module.exports = ({ env }) => {
         connector: 'bookshelf',
         settings: {
           client: 'postgres',
-          host: env('DATABASE_HOST', '127.0.0.1'),
-          port: env.int('DATABASE_PORT', 5432),
-          database: env('DATABASE_NAME', 'orula'),
-          username: env('DATABASE_USERNAME', 'nyala'),
-          password: env('DATABASE_PASSWORD', 'password'),
-          schema: 'public',
+          host: config.host,
+          port: config.port,
+          database: config.database,
+          username: config.user,
+          password: config.password,
           ssl: {
             rejectUnauthorized: false,
           },
@@ -20,7 +22,7 @@ module.exports = ({ env }) => {
           ssl: true,
           pool: {
             min: 0,
-            max: env.int('DB_POOL_MAX', 60),
+            max: env.int('DB_POOL_MAX', 20),
             createTimeoutMillis: 60000,
             acquireTimeoutMillis: 60000,
             idleTimeoutMillis: 60000,

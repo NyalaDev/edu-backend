@@ -20,6 +20,7 @@
     "axios": "^0.19.2",
     "knex": "0.21.1",
     "pg": "latest",
+    "pg-connection-string": "^2.4.0",
     "strapi": "3.0.0",
     "strapi-admin": "3.0.0",
     "strapi-connector-bookshelf": "3.0.0",
