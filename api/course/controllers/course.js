@@ -1,5 +1,6 @@
 const { sanitizeEntity } = require('strapi-utils');
 const { slugify } = require('../../helpers/util');
+const orderBy = require('lodash/orderBy');
 
 const isTeacher = (user) => {
   try {
@@ -22,7 +23,17 @@ module.exports = {
         'instructor.profile',
       ]);
 
-    return courses.map((course) => sanitizeEntity(course, { model: strapi.models.course }));
+
+    const sanitisedCourses = courses.map((course) => sanitizeEntity(course, { model: strapi.models.course }));
+    const result = sanitisedCourses.map(
+      course => {
+        return {
+          ...course,
+          lectures: orderBy(course.lectures, 'position', 'asc')
+        }
+      }
+    )
+    return result
   },
   async findOne(ctx) {
     const { id } = ctx.params;
