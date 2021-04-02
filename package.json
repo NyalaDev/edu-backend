@@ -18,8 +18,8 @@
   "dependencies": {
     "algoliasearch": "^4.3.0",
     "axios": "^0.19.2",
-    "knex": "0.21.1",
-    "pg": "latest",
+    "knex": "^0.21.17",
+    "pg": "^8.3.2",
     "pg-connection-string": "^2.4.0",
     "strapi": "3.0.0",
     "strapi-admin": "3.0.0",
@@ -39,7 +39,7 @@
     "uuid": "bb3598d4-69d3-4bc9-a340-db30d747dbe4"
   },
   "engines": {
-    "node": "14.x",
+    "node": "12.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT",

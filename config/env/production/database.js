@@ -19,7 +19,7 @@ module.exports = ({ env }) => {
           },
         },
         options: {
-          ssl: true,
+          ssl: false,
           pool: {
             min: 0,
             max: env.int('DB_POOL_MAX', 20),
