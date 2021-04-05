@@ -6,7 +6,10 @@ module.exports = {
     const { user } = ctx.state;
     if (user) {
       if (user.profile) {
-        const entity = await strapi.services.profile.findOne({ id: user.profile });
+        const entity = await strapi.services.profile.findOne({ id: user.profile }, [
+          'user',
+          'user.role',
+        ]);
         return sanitizeEntity(entity, { model: strapi.models.profile });
       } else {
         return {};

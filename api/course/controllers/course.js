@@ -83,9 +83,6 @@ module.exports = {
   },
   async update(ctx) {
     const { id } = ctx.params;
-
-    let entity;
-
     const course = await strapi.services.course.findOne({
       id: ctx.params.id,
       'instructor.id': ctx.state.user.id,
@@ -95,7 +92,9 @@ module.exports = {
       return ctx.unauthorized(`You can't update this entry`);
     }
 
-    entity = await strapi.services.course.update({ id }, ctx.request.body);
+    const payload = { ...ctx.request.body };
+    delete payload.slug; // Make sure that the slug is not going to be updated when we the course is updated
+    const entity = await strapi.services.course.update({ id }, payload);
 
     return sanitizeEntity(entity, { model: strapi.models.course });
   },
