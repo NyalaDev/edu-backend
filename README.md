@@ -1,8 +1,8 @@
 # Barmaga.IO Backend API
 
-Barmaga.io, an open source education/learning platform.
-This is the back-end side of the project.
-If you are looking for the back-end api please go tot this project [edu-ui](https://github.com/NyalaDev/edu-ui)
+This is [Barmaga.io](https://barmaga.io) website backend api, built with [Strapi](https://strapi.io).
+
+If you are looking for the front-end, pelase visit this repo [edu-ui](https://github.com/NyalaDev/edu-ui)
 
 ## Requirements
 
