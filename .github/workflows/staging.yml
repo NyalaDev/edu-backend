@@ -1,0 +1,30 @@
+name: Staging Pipeline
+
+on: [pull_request]
+
+jobs:
+  run-tests:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: yarn
+      - name: Run Tests
+        run: yarn test
+  deploy-to-staging:
+    name: Deploy to staging server
+    needs: run-tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      # - name: Info
+      #   run: echo Ref is ${{ github.ref }} and head is ${{ github.head_ref }}
+      - name: Push to heroku
+        run: git push -f https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/${{ secrets.HEROKU_STAGING_APP_NAME }}.git HEAD:main
+        
+
+
+
+
+ 
