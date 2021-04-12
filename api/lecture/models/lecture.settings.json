@@ -27,8 +27,12 @@
       "type": "string"
     },
     "course": {
-      "via": "lectures",
-      "model": "course"
+      "model": "course",
+      "via": "lectures"
+    },
+    "code": {
+      "type": "string",
+      "unique": true
     }
   }
 }

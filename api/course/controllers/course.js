@@ -1,5 +1,6 @@
 const { sanitizeEntity } = require('strapi-utils');
 const { slugify } = require('../../helpers/util');
+const orderBy = require('lodash/orderBy');
 
 const isTeacher = (user) => {
   try {
@@ -22,7 +23,17 @@ module.exports = {
         'instructor.profile',
       ]);
 
-    return courses.map((course) => sanitizeEntity(course, { model: strapi.models.course }));
+
+    const sanitisedCourses = courses.map((course) => sanitizeEntity(course, { model: strapi.models.course }));
+    const result = sanitisedCourses.map(
+      course => {
+        return {
+          ...course,
+          lectures: orderBy(course.lectures, 'position', 'asc')
+        }
+      }
+    )
+    return result
   },
   async findOne(ctx) {
     const { id } = ctx.params;
@@ -72,9 +83,6 @@ module.exports = {
   },
   async update(ctx) {
     const { id } = ctx.params;
-
-    let entity;
-
     const course = await strapi.services.course.findOne({
       id: ctx.params.id,
       'instructor.id': ctx.state.user.id,
@@ -84,7 +92,9 @@ module.exports = {
       return ctx.unauthorized(`You can't update this entry`);
     }
 
-    entity = await strapi.services.course.update({ id }, ctx.request.body);
+    const payload = { ...ctx.request.body };
+    delete payload.slug; // Make sure that the slug is not going to be updated when we the course is updated
+    const entity = await strapi.services.course.update({ id }, payload);
 
     return sanitizeEntity(entity, { model: strapi.models.course });
   },
