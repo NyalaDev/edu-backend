@@ -9,4 +9,17 @@ module.exports = {
     const delimiterToUse = delimiter || '-';
     return text.trim().toLowerCase().replace(/\s+/g, delimiterToUse);
   },
+  /**
+   * Generate random alpha-numeric N characters string
+   * @param {number} length String length. Default is 9
+   * @returns {string} generated value
+   */
+  randomString(length = 9) {
+    const SEED = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i += 1) {
+      result += SEED.charAt(Math.floor(Math.random() * SEED.length));
+    }
+    return result;
+  },
 };

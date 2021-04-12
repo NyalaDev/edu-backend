@@ -1,7 +1,6 @@
-'use strict';
-
 const isProd = process.env.ALGOLIA_MODE === 'prod';
 const algoliaIndexName = isProd ? 'lecture' : 'dev_lecture';
+const { randomString } = require('../../helpers/util');
 
 /**
  * Lifecycle callbacks for the `lecture` model.
@@ -9,6 +8,10 @@ const algoliaIndexName = isProd ? 'lecture' : 'dev_lecture';
 
 module.exports = {
   lifecycles: {
+    async beforeCreate(data) {
+      const code = randomString();
+      data.code = code;
+    },
     async afterCreate(lecture) {
       // Save to index
       try {
