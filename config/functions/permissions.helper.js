@@ -34,6 +34,7 @@ const initPermissions = async () => {
     await enablePermission('public', 'tag', action);
 
     // Authentication
+    await enablePermission('authenticated', 'settings', 'find');
     await enablePermission('authenticated', 'course', action);
     await enablePermission('authenticated', 'lecture', action);
     await enablePermission('authenticated', 'language', action);
