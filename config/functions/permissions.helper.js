@@ -26,6 +26,7 @@ const readOnlyActions = ['find', 'findone'];
 const initPermissions = async () => {
   for (let action of readOnlyActions) {
     //Public
+    await enablePermission('public', 'settings', 'find');
     await enablePermission('public', 'course', action);
     await enablePermission('public', 'lecture', action);
     await enablePermission('public', 'language', action);
