@@ -1,4 +1,3 @@
-'use strict';
 const { slugify } = require('../../helpers/util');
 
 const isProd = process.env.ALGOLIA_MODE === 'prod';
@@ -17,7 +16,7 @@ module.exports = {
     async afterCreate(result) {
       const course = { ...result };
       const { instructor } = course;
-      if(instructor) {
+      if (instructor) {
         delete instructor.password;
         delete course.students;
         course.instructor = instructor;
@@ -34,7 +33,7 @@ module.exports = {
     async afterUpdate(result) {
       const course = { ...result };
       const { instructor } = course;
-      if(instructor) {
+      if (instructor) {
         delete instructor.password;
         delete course.students;
         // delete course.lectures;

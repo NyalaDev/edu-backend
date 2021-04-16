@@ -40,8 +40,8 @@
       "via": "teaches"
     },
     "lectures": {
-      "collection": "lecture",
-      "via": "course"
+      "via": "course",
+      "collection": "lecture"
     },
     "students": {
       "plugin": "users-permissions",

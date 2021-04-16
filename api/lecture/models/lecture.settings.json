@@ -27,8 +27,12 @@
       "type": "string"
     },
     "course": {
-      "via": "lectures",
-      "model": "course"
+      "model": "course",
+      "via": "lectures"
+    },
+    "slug": {
+      "type": "string",
+      "unique": false
     }
   }
 }
