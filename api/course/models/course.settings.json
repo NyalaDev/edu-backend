@@ -35,18 +35,18 @@
       "model": "language"
     },
     "instructor": {
+      "via": "teaches",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "teaches"
+      "model": "user"
     },
     "lectures": {
       "via": "course",
       "collection": "lecture"
     },
     "students": {
+      "via": "enrollments",
       "plugin": "users-permissions",
       "collection": "user",
-      "via": "enrollments",
       "dominant": true
     },
     "tags": {
