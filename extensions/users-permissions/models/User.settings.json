@@ -67,6 +67,9 @@
     },
     "language": {
       "type": "string"
+    },
+    "emailSubscription": {
+      "type": "boolean"
     }
   }
 }
