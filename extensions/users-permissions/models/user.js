@@ -9,7 +9,7 @@ const subscribeToMailingList = async (values) => {
 module.exports = {
   lifecycles: {
     afterCreate: async (model, response, options) => {
-      if (model.emailConfirmation && model.language) {
+      if (model.emailSubscription && model.language) {
         await subscribeToMailingList({
           email: model.email,
           LANGUAGE: model.language,
