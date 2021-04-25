@@ -1,49 +1,9 @@
 {
   "routes": [
     {
-      "method": "GET",
-      "path": "/ratings",
-      "handler": "rating.find",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/ratings/count",
-      "handler": "rating.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/ratings/:id",
-      "handler": "rating.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
       "method": "POST",
       "path": "/ratings",
       "handler": "rating.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/ratings/:id",
-      "handler": "rating.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/ratings/:id",
-      "handler": "rating.delete",
       "config": {
         "policies": []
       }
