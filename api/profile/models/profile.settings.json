@@ -22,9 +22,9 @@
       "type": "string"
     },
     "user": {
+      "via": "profile",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "profile"
+      "model": "user"
     },
     "profilepicture": {
       "model": "file",

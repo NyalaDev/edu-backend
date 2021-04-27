@@ -54,16 +54,22 @@
       "configurable": false
     },
     "teaches": {
-      "via": "instructor",
-      "collection": "course"
+      "collection": "course",
+      "via": "instructor"
     },
     "enrollments": {
-      "via": "students",
-      "collection": "course"
+      "collection": "course",
+      "via": "students"
     },
     "profile": {
-      "via": "user",
-      "model": "profile"
+      "model": "profile",
+      "via": "user"
+    },
+    "language": {
+      "type": "string"
+    },
+    "emailSubscription": {
+      "type": "boolean"
     }
   }
 }
