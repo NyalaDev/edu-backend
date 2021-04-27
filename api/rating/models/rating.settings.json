@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ratings",
+  "info": {
+    "name": "rating"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "courseId": {
+      "model": "course",
+      "via": "rating"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "text": {
+      "type": "string"
+    },
+    "data": {
+      "type": "json"
+    }
+  }
+}

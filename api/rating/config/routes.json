@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/ratings",
+      "handler": "rating.create",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -73,6 +73,10 @@
         "Intermediate",
         "Advanced"
       ]
+    },
+    "rating": {
+      "via": "courseId",
+      "model": "rating"
     }
   }
 }
