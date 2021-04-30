@@ -5,7 +5,7 @@ services:
     image: postgres
     restart: always
     ports:
-      - 5432:5432
+      - 5433:5432
     environment:
       POSTGRES_DB: orula
       POSTGRES_USER: nyala
