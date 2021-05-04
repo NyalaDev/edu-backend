@@ -49,6 +49,9 @@
       ".tmp",
       ".cache"
     ],
+    "globals": {
+      "strapi": true
+    },
     "testEnvironment": "node"
   }
 }
