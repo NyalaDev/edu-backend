@@ -22,9 +22,9 @@
       "type": "string"
     },
     "user": {
-      "via": "profile",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "profile"
     },
     "profilepicture": {
       "model": "file",
@@ -42,6 +42,11 @@
     },
     "completedlectures": {
       "type": "json"
+    },
+    "email": {
+      "type": "email",
+      "required": false,
+      "unique": false
     }
   }
 }
