@@ -61,6 +61,9 @@ const initPermissions = async () => {
   await enablePermission('authenticated', 'profile', 'update');
   await enablePermission('authenticated', 'pr', 'create');
   await enablePermission('authenticated', 'rating', 'create');
+
+  // this is needed to create profile on signup
+  await enablePermission('public', 'profile', 'create');
 };
 
 module.exports = {
