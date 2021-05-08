@@ -11,6 +11,12 @@ const YouTubePlayListURL = `https://www.youtube.com/watch?v=J3UynuivVy4&list=${Y
 const YouTubePlayListURL2 = `https://www.youtube.com/playlist?list=${YoutubePlayListId}`;
 
 describe('Youtube Util test', () => {
+  let originalStrapi;
+  beforeEach(() => {
+    originalStrapi = global.strapi;
+    global.strapi = { log: { error: jest.fn() } };
+  });
+  afterEach(() => (global.strapi = originalStrapi));
   describe('isValidYoutubeUrl tests', () => {
     it('should return false if invalid youtube url provided', () => {
       expect(youtubeUtil.isValidYoutubeUrl('https://nyala.dev')).toBeFalsy();

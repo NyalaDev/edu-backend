@@ -9,8 +9,14 @@ const subscribeToMailingList = async (values) => {
 
 module.exports = {
   lifecycles: {
-    afterCreate: async (model, response, options) => {
+    afterCreate: async (model, request, options) => {
       try {
+        await strapi.services.profile.create({
+          name: request.name,
+          email: model.email,
+          user: model.id,
+        });
+
         if (model.emailSubscription && model.language) {
           await subscribeToMailingList({
             email: model.email,

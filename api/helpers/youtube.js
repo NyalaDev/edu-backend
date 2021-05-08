@@ -91,6 +91,7 @@ const getPlaylistContents = async (playListId) => {
 
     return await Promise.all(asyncResult);
   } catch (e) {
+    strapi.log.error(e);
     return null;
   }
 };
