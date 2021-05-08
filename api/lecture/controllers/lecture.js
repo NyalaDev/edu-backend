@@ -93,4 +93,16 @@ module.exports = {
 
     return lectures.map((lecture) => sanitizeEntity(lecture, { model: strapi.models.lecture }));
   },
+  async update(ctx) {
+    const {
+      state: { user },
+      request: { body },
+    } = ctx;
+
+    const entity = body.map(async (lecture) => {
+      return await strapi.services.lecture.update({ id: lecture.id }, lecture);
+    });
+
+    return entity;
+  },
 };

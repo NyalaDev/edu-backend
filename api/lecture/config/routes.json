@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/lectures/:id",
+      "path": "/lectures",
       "handler": "lecture.update",
       "config": {
         "policies": []
