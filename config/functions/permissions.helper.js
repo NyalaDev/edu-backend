@@ -56,6 +56,7 @@ const initPermissions = async () => {
   await enablePermission('teacher', 'course', 'findforteacher');
   await enablePermission('teacher', 'course', 'patchcourse');
   await enablePermission('teacher', 'lecture', 'import');
+  await enablePermission('teacher', 'lecture', 'bulkUpdate');
 
   await enablePermission('authenticated', 'profile', 'create');
   await enablePermission('authenticated', 'profile', 'update');

@@ -93,7 +93,7 @@ module.exports = {
 
     return lectures.map((lecture) => sanitizeEntity(lecture, { model: strapi.models.lecture }));
   },
-  async update(ctx) {
+  async bulkUpdate(ctx) {
     const {
       state: { user },
       request: { body },

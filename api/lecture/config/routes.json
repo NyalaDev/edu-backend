@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/lectures",
+      "path": "/lectures/:id",
       "handler": "lecture.update",
       "config": {
         "policies": []
@@ -52,6 +52,14 @@
       "method": "POST",
       "path": "/lectures/import",
       "handler": "lecture.import",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/lectures/bulk-update",
+      "handler": "lecture.bulkUpdate",
       "config": {
         "policies": []
       }
