@@ -32,13 +32,28 @@ const courseSeeder = async () => {
     const courses = require('../../data/seed/abolkog_prod_courses.json');
     const lectures = require('../../data/seed/abolkog_prod_lectures.json');
 
+    const instructorUser = await strapi
+      .query('user', 'users-permissions')
+      .findOne({ email: 'abolkog@nyala.dev' });
+
+    const firstTag = await strapi.query('tag').findOne({});
+    const arLanguage = await strapi.query('language').findOne({ iso2: 'ar' });
+
     for (const rawCourse of courses) {
-      rawCourse.language = 6;
-      rawCourse.instructor = 1;
-      rawCourse.tags = [1];
+      rawCourse.language = arLanguage.id;
+      rawCourse.instructor = instructorUser.id;
+
+      rawCourse.tags = [firstTag.id];
       rawCourse.level = 'Intermediate';
       let createdCourse = await strapi.services.course.create(rawCourse);
       const courseLectures = lectures.filter((l) => l.course_id === rawCourse.id);
+
+      await strapi.services.rating.create({
+        rating: 5,
+        courseId: createdCourse.id,
+        data: JSON.stringify([{ lectureId: 1, user: 1, text: '', rating: 5 }]),
+      });
+
       for (const lecture of courseLectures) {
         delete lecture.course_id;
         lecture.course = createdCourse.id;
@@ -56,24 +71,40 @@ const createRoleIfNotExists = async (name, type) => {
   }
 };
 
+const clearDB = async () => {
+  await strapi.query('profile').delete();
+  await strapi.query('user', 'users-permissions').delete();
+  await strapi.query('lecture').delete();
+  await strapi.query('course').delete();
+  await strapi.query('tag').delete();
+  await strapi.query('pr').delete();
+  await strapi.query('rating').delete();
+  await strapi.query('language').delete();
+};
+
 const roleSeeder = async () => {
   await createRoleIfNotExists('Teacher', 'teacher');
 
   const profiles = await strapi.query('profile').find();
   const users = await strapi.query('user', 'users-permissions').find();
 
+  const teacherRole = await strapi.query('role', 'users-permissions').findOne({ type: 'teacher' });
+
   if (profiles && profiles.length === 0 && users && users.length === 0) {
     const { id: profileId } = await strapi.query('profile').create({
-      name: 'test',
-      bio: 'test bio',
-      linkedin: 'https://linkedin.com',
-      github: 'https://github.com/test',
+      name: 'abolkog',
+      bio: 'abolkog is the father of sami.',
+      linkedin: 'abolkog-linkedin',
+      github: 'abolkog',
     });
-    await strapi
-      .query('user', 'users-permissions')
-      .create({ username: 'test', email: 'test@test.com', profile: profileId });
+    await strapi.query('user', 'users-permissions').create({
+      username: 'test',
+      role: teacherRole.id,
+      email: 'abolkog@nyala.dev',
+      profile: profileId,
+    });
     strapi.log.debug('created first user in DB');
   }
 };
 
-module.exports = { languageSeeder, courseSeeder, roleSeeder, tagSeeder };
+module.exports = { languageSeeder, courseSeeder, roleSeeder, tagSeeder, clearDB };

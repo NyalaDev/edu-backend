@@ -13,6 +13,7 @@
     "github_repo": "https://github.com/abolkog/git_tutorial",
     "created_at": "2017-08-20 15:11:00",
     "updated_at": "2019-09-25 06:51:35",
+    "resources": "[{\"text\": \"ادخلوا عنوان موقعكم على Github لنقوم بعمل مراجعة للكود (Code Review). تأكد من أن الكود منشور public وسنقوم باضافة أي تعليقات كـ Github issues\",\"type\": \"exercise\"}]",
     "deleted_at": null
   },
   {
