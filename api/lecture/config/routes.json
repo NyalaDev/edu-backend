@@ -55,6 +55,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PATCH",
+      "path": "/lectures/bulk-update",
+      "handler": "lecture.bulkUpdate",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

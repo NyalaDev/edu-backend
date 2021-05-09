@@ -23,7 +23,7 @@ module.exports = {
     async afterUpdate(lecture) {
       // Save to index
       try {
-        await strapi.services.search.save(course, algoliaIndexName);
+        await strapi.services.search.save(lecture, algoliaIndexName);
       } catch (e) {
         strapi.log.error(`Error saving data to algolia: ${e.message}`);
       }
