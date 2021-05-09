@@ -90,19 +90,28 @@ const roleSeeder = async () => {
 
   const teacherRole = await strapi.query('role', 'users-permissions').findOne({ type: 'teacher' });
 
+  const email = 'abolkog@nyala.dev';
   if (profiles && profiles.length === 0 && users && users.length === 0) {
-    const { id: profileId } = await strapi.query('profile').create({
-      name: 'abolkog',
-      bio: 'abolkog is the father of sami.',
-      linkedin: 'abolkog-linkedin',
-      github: 'abolkog',
-    });
-    await strapi.query('user', 'users-permissions').create({
-      username: 'test',
+    const user = await strapi.query('user', 'users-permissions').create({
+      username: 'abolkog-test',
       role: teacherRole.id,
-      email: 'abolkog@nyala.dev',
-      profile: profileId,
+      email,
     });
+
+    // the profile is created automatically now in the afterCreate hook of user
+    const profile = await strapi.query('profile').findOne({
+      email,
+    });
+
+    await strapi.query('profile').update(
+      { id: profile.id },
+      {
+        name: 'abolkog',
+        bio: 'abolkog is the father of sami.',
+        linkedin: 'abolkog-linkedin',
+        github: 'abolkog',
+      }
+    );
     strapi.log.debug('created first user in DB');
   }
 };
