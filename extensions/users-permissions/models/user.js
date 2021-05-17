@@ -11,11 +11,12 @@ module.exports = {
   lifecycles: {
     afterCreate: async (model, request, options) => {
       try {
-        await strapi.services.profile.create({
+        const profile = await strapi.services.profile.create({
           name: request.name,
           email: model.email,
           user: model.id,
         });
+        model.profile = { ...profile };
 
         if (model.emailSubscription && model.language) {
           await subscribeToMailingList({
