@@ -57,16 +57,19 @@ module.exports = {
     return sanitizeEntity(entity, { model: strapi.models.profile });
   },
   async delete(ctx) {
-    const { id } = ctx.params;
     const { user } = ctx.state;
-    if (user.profile === parseInt(id)) {
-      if (user.role.name !== 'Teacher') {
-        await strapi.plugins['users-permissions'].services.user.remove({ id: user.id });
-        const entity = await strapi.services.profile.delete({ id });
-        return sanitizeEntity(entity, { model: strapi.models.profile });
-      }
-      return ctx.unauthorized(`You can't delete a user with role teacher`);
+    try {
+      const { role } = user;
+      if (role.type === 'teacher')
+        return ctx.unauthorized(`You can't delete a user with role teacher`);
+
+      await strapi.plugins['users-permissions'].services.user.remove({
+        id: user.id,
+      });
+      const entity = await strapi.services.profile.delete({ id: user.profile });
+      return sanitizeEntity(entity, { model: strapi.models.profile });
+    } catch (e) {
+      strapi.log.error(error);
     }
-    return ctx.unauthorized(`You can't delete this entry`);
   },
 };
