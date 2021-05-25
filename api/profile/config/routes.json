@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/profiles/:id",
+      "path": "/profiles",
       "handler": "profile.delete",
       "config": {
         "policies": []
