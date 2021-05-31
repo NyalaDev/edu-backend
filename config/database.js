@@ -15,7 +15,6 @@ module.exports = ({ env }) => {
         },
         options: {
           debug: env('debug'),
-          autoMigration: env('DATABASE_AUTOMIGRATION') === 'true',
           pool: {
             min: 0,
             max: env.int('DB_POOL_MAX', 60),

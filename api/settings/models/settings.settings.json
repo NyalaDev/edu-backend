@@ -9,7 +9,10 @@
     "timestamps": true
   },
   "attributes": {
-    "Quotes": {
+    "homeQuotes": {
+      "type": "json"
+    },
+    "homeSettings": {
       "type": "json"
     }
   }
