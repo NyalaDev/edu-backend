@@ -33,6 +33,12 @@
     "slug": {
       "type": "string",
       "unique": false
+    },
+    "upcoming": {
+      "type": "boolean"
+    },
+    "publish_date": {
+      "type": "date"
     }
   }
 }
