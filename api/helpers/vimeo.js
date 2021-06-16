@@ -26,7 +26,7 @@ const getSingleVideo = async (videoId) => {
     });
     return { duration: duration.toString() };
   } catch (e) {
-    console.log(e);
+    strapi.log.error(e);
     return null;
   }
 };

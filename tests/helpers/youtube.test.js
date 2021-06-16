@@ -37,7 +37,7 @@ describe('Youtube Util test', () => {
     });
   });
 
-  describe('getVideoDuration tests', () => {
+  describe('getSingleVideo tests', () => {
     beforeAll(() => {
       mockAxios.get = jest.fn((url) => {
         if (!url) return Promise.reject(null);
@@ -46,12 +46,12 @@ describe('Youtube Util test', () => {
     });
 
     it('should return null if error occured in getting duration', async () => {
-      const resutlt = await youtubeUtil.getVideoDuration();
+      const resutlt = await youtubeUtil.getSingleVideo();
       expect(resutlt).toBe(null);
     });
 
     it('should return duration', async () => {
-      const resutlt = await youtubeUtil.getVideoDuration(YouTubeVideoURL);
+      const resutlt = await youtubeUtil.getSingleVideo(YouTubeVideoURL);
       expect(resutlt).toBe('PT23M22S');
     });
   });
