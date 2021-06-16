@@ -60,6 +60,7 @@
     "featured": 1,
     "promo": "https://www.youtube.com/watch?v=H6mvkrTnCzM",
     "github_repo": "https://github.com/abolkog/react-native-todo-app",
+    "resources": "[{\"url\": \"https://github.com/abolkog/react-native-todo-app\",\"type\": \"link\"}]",
     "created_at": "2017-10-21 13:29:00",
     "updated_at": "2019-09-25 06:50:54",
     "deleted_at": null

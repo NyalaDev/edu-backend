@@ -1,0 +1,8 @@
+{
+  "homeQuotes": [{ "data": [{ "text": "Alaa is Alaa", "author": "Alaa" }], "language": "en" }],
+  "homeSettings": {
+    "homeBullets": [
+      { "data": [{ "title": "Alaa is Alaa", "bullets": ["Alaa"] }], "language": "en" }
+    ]
+  }
+}
