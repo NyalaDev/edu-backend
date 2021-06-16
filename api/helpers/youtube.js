@@ -1,7 +1,9 @@
 const axios = require('axios');
 
-const VALIDATE_YOUTUBE_REGEX = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
-const EXTRACT_YOUTUBE_REGEX = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+const VALIDATE_YOUTUBE_REGEX =
+  /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
+const EXTRACT_YOUTUBE_REGEX =
+  /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
 
 /**
  * Check if a URL is a valid Youtube URL using RegEx
@@ -27,7 +29,7 @@ const getVideoId = (url) => {
  * Get Youtube video duration
  * @param {string} videoId Youtube Video ID
  */
-const getVideoDuration = async (videoId) => {
+const getSingleVideo = async (videoId) => {
   try {
     if (!videoId) throw new Error('Video Id is not defined');
     const key = process.env.YOUTUBE_API_KEY;
@@ -38,7 +40,7 @@ const getVideoDuration = async (videoId) => {
       contentDetails: { duration },
     } = items[0];
 
-    return duration;
+    return { duration };
   } catch (e) {
     return null;
   }
@@ -77,7 +79,7 @@ const getPlaylistContents = async (playListId) => {
       if (!resourceId || resourceId.kind !== 'youtube#video' || !resourceId.videoId) {
         throw new Error('Unable to get video id');
       }
-      const duration = await getVideoDuration(resourceId.videoId);
+      const { duration } = await getSingleVideo(resourceId.videoId);
 
       if (!duration) throw new Error(`Unable to get duration for video ${videoId}`);
 
@@ -99,7 +101,7 @@ const getPlaylistContents = async (playListId) => {
 module.exports = {
   isValidYoutubeUrl,
   getVideoId,
-  getVideoDuration,
+  getSingleVideo,
   getPlayListId,
   getPlaylistContents,
 };

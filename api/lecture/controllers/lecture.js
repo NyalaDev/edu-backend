@@ -1,15 +1,13 @@
 'use strict';
 const { sanitizeEntity } = require('strapi-utils');
 
-/* const {
-  isValidYoutubeUrl,
-  getVideoId,
-  getVideoDuration,
-  getPlaylistContents,
-  getPlayListId,
-} = require('../../helpers/youtube'); */
-
-const { getId, getSingleVideo, getPlaylistContents } = require('../../helpers/vimeo');
+const youtubeHelper = require('../../helpers/youtube');
+const vimeoHelper = require('../../helpers/vimeo');
+const getVideoHelper = (url) => {
+  if (url.match(/youtu/)) return youtubeHelper;
+  if (url.match(/vimeo/)) return vimeoHelper;
+  throw 'Unsupported video platform';
+};
 
 module.exports = {
   async create(ctx) {
@@ -31,18 +29,21 @@ module.exports = {
 
     const position = course.lectures.length;
 
-    const videoId = getId(url);
+    const videoHelper = getVideoHelper(url);
+
+    const videoId = videoHelper.getVideoId(url);
+
     if (!videoId) {
       return ctx.response.badRequest("Couldn't extract video id");
     }
 
-    const video = await getSingleVideo(videoId);
+    const video = await videoHelper.getSingleVideo(videoId);
 
     if (!video) {
       return ctx.response.badRequest('Unable to get video');
     }
 
-    const lecture = { ...video, position, title, description, course: courseId };
+    const lecture = { ...video, position, title, description, url, course: courseId };
 
     const entity = await strapi.services.lecture.create(lecture);
     return sanitizeEntity(entity, { model: strapi.models.lecture });
@@ -80,7 +81,9 @@ module.exports = {
       return ctx.response.notFound('Invalid course');
     }
 
-    const channelId = getId(url);
+    const videoHelper = getVideoHelper(url);
+
+    const channelId = await videoHelper.getPlayListId(url);
 
     if (!channelId) {
       return ctx.response.send(
@@ -89,7 +92,7 @@ module.exports = {
       );
     }
 
-    const videos = await getPlaylistContents(channelId);
+    const videos = await videoHelper.getPlaylistContents(channelId);
 
     const asyncCreate = videos.map(async (video) => {
       return await strapi.services.lecture.create({
