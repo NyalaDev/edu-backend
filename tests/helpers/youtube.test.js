@@ -52,7 +52,7 @@ describe('Youtube Util test', () => {
 
     it('should return duration', async () => {
       const resutlt = await youtubeUtil.getSingleVideo(YouTubeVideoURL);
-      expect(resutlt).toBe('PT23M22S');
+      expect(resutlt.duration).toBe('PT23M22S');
     });
   });
 
