@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "name": "question"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "lecture": {
+      "model": "lecture",
+      "via": "questions"
+    },
+    "replies": {
+      "type": "json"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "question"
+    }
+  }
+}
