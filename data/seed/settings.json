@@ -1,0 +1,100 @@
+{
+  "homeQuotes": [
+    {
+      "data": [
+        {
+          "text": "التعليم هو أقوى سلاح لتغيير العالم",
+          "author": "نيلسون مانديلا"
+        },
+        {
+          "text": "اذا تحدثت لشخص بلغة يفهمها فكلامك يذهب لعقله. إذا تحدثت إليهم بلغتهم الأم فكلامك يذهب إلى قلوبهم.",
+          "author": "نيلسون مانديلا"
+        },
+        {
+          "text": "التعليم هو مفتاح المستقبل، فالغد مِلكُ لمن يحضرون له اليوم",
+          "author": "مالكولم إكس"
+        }
+      ],
+      "language": "ar"
+    },
+    {
+      "data": [
+        {
+          "text": "Education is the most powerful weapon which you can use to change the world.",
+          "author": "Nelson Mandela"
+        },
+        {
+          "text": "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.",
+          "author": "Malcolm X"
+        },
+        {
+          "text": "If you talk to a person in a language they understand, that goes to their head. If you talk to them in their own language, that goes to their heart.",
+          "author": "Nelson Mandela"
+        }
+      ],
+      "language": "en"
+    },
+    {
+      "data": [
+        {
+          "text": "Elimu ni silaha kubwa ambayo unaweza kuitumia kubadili dunia.",
+          "author": "Nelson Mandela"
+        },
+        {
+          "text": "Elimu ni pasipoti kwa siku zijazo, maana kesho ni kwa ajili ya wale wanaoiandaa leo hii.",
+          "author": "Malcom X"
+        },
+        {
+          "text": "Kama ukiongea na mtu kwa lugha ambayo anaielewa basi itakaa kichwani. Ila ukiongea nao kwa lugha ya kwao basi itakaa moyoni.",
+          "author": "Nelson Mandela"
+        }
+      ],
+      "language": "sw"
+    }
+  ],
+  "homeSettings": {
+    "homeBullets": [
+      {
+        "data": [
+          {
+            "title": "برمجة",
+            "bullets": [
+              "منصة مجانية مفتوحة المصدر والمحتوى لتعلم البرمجة من خلال كورسات فيديو تفاعلية لأجد التقنيات ولغات البرمجة",
+              "قم باتباع تراكات كاملة، أو كورسات فردية أو حتى محاضرات منفردة ضمن كورس معين اذا كنت ترغب في تعلم موضوع معين",
+              "جميع المستويات: من المبتدئين للخبراء"
+            ]
+          },
+          {
+            "title": "منصة تفاعلية",
+            "bullets": [
+              "مشاريع عملية حقيقية نقوم بإنشائها أمامكم خطوة بخطوة",
+              "تمارين برمجة مع كل كورس، قم ببدء Pull Request  سنقوم بمراجعته وتقييمه لك",
+              "قريبا، منصة للمرشدين الخاصين Mentors"
+            ]
+          }
+        ],
+        "language": "ar"
+      },
+      {
+        "data": [
+          {
+            "title": "barmaga.io",
+            "bullets": [
+              "open-source open-content platform to learn programming in local languages. All levels from beginners to advanced.",
+              "Follow full tracks, courses or even individual lectures to cover specific topics"
+            ]
+          },
+          {
+            "title": "Dynamic platform",
+            "bullets": [
+              "Learn to build real-life projects step by step",
+              "Follow the exercises with each course, open a PR that can be reviewed by barmaga's community",
+              "Coming Soon: A platform to match mentors with learners"
+            ]
+          }
+        ],
+        "language": "en"
+      }
+    ]
+  }
+}
