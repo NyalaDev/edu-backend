@@ -32,6 +32,7 @@ const initPermissions = async () => {
     await enablePermission('public', 'language', action);
     await enablePermission('public', 'profile', action);
     await enablePermission('public', 'tag', action);
+    await enablePermission('public', 'question', 'find');
 
     // Authentication
     await enablePermission('authenticated', 'settings', 'find');
@@ -62,6 +63,7 @@ const initPermissions = async () => {
   await enablePermission('authenticated', 'profile', 'update');
   await enablePermission('authenticated', 'pr', 'create');
   await enablePermission('authenticated', 'rating', 'create');
+  await enablePermission('authenticated', 'question', 'create');
 
   // this is needed to create profile on signup
   await enablePermission('public', 'profile', 'create');

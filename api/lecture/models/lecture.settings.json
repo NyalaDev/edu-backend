@@ -39,6 +39,10 @@
     },
     "publish_date": {
       "type": "date"
+    },
+    "questions": {
+      "via": "lecture",
+      "collection": "question"
     }
   }
 }
