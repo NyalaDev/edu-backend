@@ -24,6 +24,13 @@ const tagSeeder = async () => {
   }
 };
 
+const settingsSeeder = async () => {
+  const seed = require('../../data/seed/settings.json');
+  const { homeQuotes, homeSettings } = (await strapi.query('settings').findOne()) || {};
+  if (homeQuotes && homeQuotes.length && homeSettings) return;
+  await strapi.query('settings').create(seed);
+};
+
 const courseSeeder = async () => {
   if (process.env.NODE_ENV === 'production') return;
 
@@ -80,6 +87,7 @@ const clearDB = async () => {
   await strapi.query('pr').delete();
   await strapi.query('rating').delete();
   await strapi.query('language').delete();
+  await strapi.query('settings').delete();
 };
 
 const roleSeeder = async () => {
@@ -116,4 +124,4 @@ const roleSeeder = async () => {
   }
 };
 
-module.exports = { languageSeeder, courseSeeder, roleSeeder, tagSeeder, clearDB };
+module.exports = { languageSeeder, courseSeeder, roleSeeder, tagSeeder, clearDB, settingsSeeder };

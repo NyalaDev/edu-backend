@@ -1,5 +1,12 @@
 'use strict';
-const { languageSeeder, clearDB, courseSeeder, roleSeeder, tagSeeder } = require('./seeder');
+const {
+  languageSeeder,
+  clearDB,
+  courseSeeder,
+  roleSeeder,
+  tagSeeder,
+  settingsSeeder,
+} = require('./seeder');
 const { initPermissions } = require('./permissions.helper');
 
 module.exports = async () => {
@@ -10,6 +17,7 @@ module.exports = async () => {
     await roleSeeder();
     await tagSeeder();
     await languageSeeder();
+    await settingsSeeder();
     await courseSeeder();
     await initPermissions();
   } catch (err) {
