@@ -26,6 +26,8 @@ const tagSeeder = async () => {
 
 const settingsSeeder = async () => {
   const seed = require('../../data/seed/settings.json');
+  const { homeQuotes, homeSettings } = (await strapi.query('settings').findOne()) || {};
+  if (homeQuotes && homeQuotes.length && homeSettings) return;
   await strapi.query('settings').create(seed);
 };
 
