@@ -13,8 +13,8 @@
       "type": "string"
     },
     "lecture": {
-      "model": "lecture",
-      "via": "questions"
+      "via": "questions",
+      "model": "lecture"
     },
     "replies": {
       "type": "json"

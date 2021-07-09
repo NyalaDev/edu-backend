@@ -55,7 +55,11 @@
     },
     "status": {
       "type": "enumeration",
-      "enum": ["Upcoming", "Draft", "Published"],
+      "enum": [
+        "Upcoming",
+        "Draft",
+        "Published"
+      ],
       "default": "Draft"
     },
     "resources": {
@@ -64,7 +68,11 @@
     },
     "level": {
       "type": "enumeration",
-      "enum": ["Beginner", "Intermediate", "Advanced"]
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Advanced"
+      ]
     },
     "rating": {
       "via": "courseId",

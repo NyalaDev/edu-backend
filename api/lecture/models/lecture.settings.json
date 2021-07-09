@@ -15,7 +15,7 @@
     },
     "url": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "position": {
       "type": "integer"
@@ -41,8 +41,19 @@
       "type": "date"
     },
     "questions": {
-      "via": "lecture",
-      "collection": "question"
+      "collection": "question",
+      "via": "lecture"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "video",
+        "text"
+      ],
+      "default": "video"
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }
