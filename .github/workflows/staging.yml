@@ -1,6 +1,13 @@
 name: Staging Pipeline
 
-on: [pull_request]
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Manual Deployment Reason'
+        required: false
+        default: 'Rebuild staging api'
 
 jobs:
   run-tests:
